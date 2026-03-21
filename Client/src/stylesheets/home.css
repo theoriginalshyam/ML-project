@@ -1,0 +1,498 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap');
+
+
+.App {
+  margin-bottom: 30px;
+  text-align: center;
+  background-color: black; 
+                   
+}
+.newsbody{
+  margin-bottom: 30px;
+  text-align: center;
+  background-color: black;
+  
+  border: 1px white;      
+              
+}
+
+/* Set the background color of the HTML and body elements to black */
+html, body {                                                 
+  background-color: black;                                  
+  margin: 0;                                                  
+  padding: 0;                                                 
+}
+
+/* Add background color to the main content container (if needed) */
+
+
+/* Update other elements with specific background colors as needed */
+/* ... (existing styles) ... */
+
+.img{
+  width: 100%;
+height: 80vmin;
+opacity: 0.7 ;
+}
+.bgmain {
+  display: flex;
+  flex-direction: column;
+  height:130vmin;
+  width: 100%;
+  background-color: #222121;
+}
+
+.image-row {
+  display: flex;
+  justify-content: space-between;
+  height:70vmin;
+}
+.image-row-icons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  /* margin-left: 10%; */
+}
+
+.bg-image-container {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+
+}
+.full-width-image {
+  /* width: 100vw; */
+  /* max-width: 100%; */
+  /* height: 70vh; */
+  /* display: inline-block; */
+  /* text-align: center; */
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+
+}
+
+.img1 {
+  order: 0;
+  width: 25%; /* Adjust this value as needed */
+  /* max-width: 100%; */
+  padding-left:7vw;
+  padding-right:3vw;
+  /* margin-left: 11%; */
+  box-sizing: border-box;
+  /* margin-top: 20px; */
+  position: relative;
+  bottom: 20px;
+}
+.img2 {
+  order: 1;
+  width: 25%; /* Adjust this value as needed */
+  /* max-width: 100%; */
+  padding-left:4vw;
+  padding-right:4vw;
+  /* margin-top: 30px; */
+  /* margin-right: 110px; */
+  /* margin-right: 11%; */
+  /* position: relative; */
+  /* bottom: 20px; */
+  box-sizing: border-box;
+}
+.img3 {
+  order: 2;
+  /* margin-left: 50px; */
+  width: 25%; /* Adjust this value as needed */
+  /* max-width: 100%; */
+  /* margin-left: 11%; */
+  /* margin-top: 20px; */
+  padding-left:4vw;
+  padding-right:4vw;
+  padding-top: 50px;
+  box-sizing: border-box;
+}
+.img4 {
+  order: 3;
+  /* margin-left: 50px; */
+  width: 25%; /* Adjust this value as needed */
+  /* max-width: 100%; */
+  /* margin-right: 11%; */
+  /* margin-top: 20px; */
+  padding-left:3vw;
+  padding-right:7vw;
+  padding-top: 60px;
+  box-sizing: border-box;
+}
+.logoimg{
+  width: 100%;
+height: 10vmin;
+opacity: 0.7 ;
+}
+
+.image-row-container{
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  flex-wrap: wrap;
+  padding-top: 2rem;
+}
+.img5 {
+  width:25%;
+  height: 50%;
+  }
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  
+}
+
+.title{
+  margin-left: 50px;
+  padding-right:10px ;
+  font-family:"Montserrat";
+  font-size: 20;
+  width: 30%;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* Stylish Navigation Bar */
+/* Stylish Navigation Bar */
+.nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4.5px; /* Increased padding for better spacing */
+  background-color: #3aaf9f; /* Background color /                              / changed*/
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adding a subtle shadow */
+  background-color: black;  
+  height:73px;                                                          /* changed*/
+  
+}
+
+.navbarmain {
+  font-family:"Montserrat" ;
+  width: 30%;
+  position: relative;    
+  margin-top: 10px;
+  color: #000;
+    /* changed*/
+}
+
+.navright {
+  display: flex; /* Changed from grid to flex */
+  gap: 10px; /* Adjusted gap between items */
+  position: relative;
+  width: 50%;
+}
+
+.navbut {
+  display: flex; /* Changed from grid to flex */
+  align-items: center;
+  margin: 10px;
+  width: 150px;
+  font-size: 20px; /* Increased font size */
+  font-family: "Montserrat", sans-serif;
+  background-color: #000000; /* Button background color /                             / changed*/
+  padding: 6px 20px;
+  border-radius: 10px;
+  margin-top: 10px; /* Corrected typo */
+  color: #fff; /* Text color /                                                       / changed*/
+  cursor: pointer; /* Pointer cursor for buttons */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+  border: none; /* Removed border */
+  text-decoration: none; /* Removed underline for links */
+  text-transform: uppercase;
+}
+
+.navbut:hover {
+  background-color: #000000;   /* Hover background color /                                / changed*/
+  color: #3aaf9f; /* Hover text color /                                 / changed*/
+/*  border: 2px solid #8e93b0; /* Border on hover */
+text-transform: uppercase;
+}
+
+.navbur {
+  display: flex; /* Changed from grid to flex */
+  align-items: center;
+  margin: 10px;
+  width: 150px;
+  font-size: 20px; /* Increased font size */
+  font-family: "Montserrat", sans-serif;
+  background-color: #3aaf9f; /* Button background color /                 / changed*/
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin-top: 10px; /* Corrected typo */
+  color: #fff; /* Text color */
+  cursor: pointer; /* Pointer cursor for buttons */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+  border: none; /* Removed border */
+  text-decoration: none; /* Removed underline for links */
+  text-transform: uppercase;
+}
+
+.navbur:hover {
+  background-color: #ffffff;   /* Hover background color */
+  color: #000000; /* Hover text color /                                     / changed*/
+ /* border: 2px solid #8e93b0; /* Border on hover */
+ text-transform: uppercase;
+}
+.profile-dropdown {
+  position: relative;
+  height: 40px; /* Adjust the height as needed */
+  
+}
+
+.navbur {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  width: 150px;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  background-color: #3aaf9f;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin-top: 10px;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  border: none;
+  text-decoration: none;
+  text-transform: uppercase;
+  height: 40px; /* Set a fixed height to prevent movement */
+  
+}
+
+
+.search-container {
+  display: flex;
+  align-items: center;
+  background-color: #3aaf9f;                                   /* changed*/
+   
+}
+
+    .search-stocks {
+      
+      margin-right: 10px;
+      font-weight: bold;
+      background-color: #3aaf9f;                                       /* changed*/
+    }
+
+    .searchbar {
+      width: 600px;
+      height: 40px;
+      padding: 10px;
+      border: none;
+      border-radius: 20px 0 0 20px;
+      background: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      font-size: 16px;
+      outline: none;
+      margin-left: 40px; 
+      background-color: #eeeff1;
+      
+    }
+
+    .search-icon {
+      background: #3aaf9f;                                                  /* changed*/
+      color: #fff;
+      border: none;
+      border-radius: 0 20px 20px 0;
+      cursor: pointer;
+      font-size: 20px;
+    }
+
+    .search-icon:hover {
+      
+      background: #333;
+      
+    }
+.table-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Center the table vertically in the viewport */
+  
+}
+
+/* Center the table horizontally */
+.table-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Center the table vertically in the viewport */
+  
+}
+
+/* Stylish table styles */
+.table {
+  width: 80%;
+  max-width: 800px;
+  margin: 10px;
+  border-collapse: collapse;
+  border: 2px solid #333; /* Dark border color */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px; /* Add rounded corners */
+  
+}
+
+th, td {
+  padding: 15px;
+  border: 1px solid #333; /* Dark border color */
+  text-align: center;
+  color: white;                                                  /* changed*/ 
+}
+
+th {
+  background-color: #3aaf9f; /* Background color /                   / changed*/ 
+  color: white; /* Text color for table header /                     / changed*/ 
+}
+
+/* Additional styles for better appearance */
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: white;
+}
+
+
+
+/* Shift the table to the right */
+.table-container {
+  justify-content: flex-end;
+ 
+}
+
+.black-footer {
+  background-color: #000;
+  color: #fff;
+  padding: 30px 0;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+.footer-section {
+  flex: 1;
+  margin-right: 20px;
+  color: #615d5d;
+}
+
+.footer-section h2 {
+  font-size: 1.5rem;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+ul li a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.address i {
+  margin-right: 5px;
+}
+
+.copyright {
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 10px 0;
+}
+
+
+
+
+
+
+
+
+.profile-content {
+  position: absolute;
+  top: 150%; /* Position the dropdown below the profile button */
+  right: 0; /* Position the dropdown to the right */
+  width: 200px; /* Adjust the width as needed */
+  background-color: rgb(9, 71, 17) ; /* Background color for the dropdown */
+  color: white;
+  border-radius: 5px; /* Add rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  font-family: "Aerial", sans-serif;
+ 
+}
+
+.user-name {
+  font-weight: bolder;
+  margin: 5px 0;
+}
+
+.user-email {
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+.logout-button {
+  background-color: #e74c3c; /* Background color for the logout button */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-top: 10px;
+  text-align: center;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.logout-button:hover {
+  background-color: #c0392b; /* Hover background color for the logout button */
+}
+
+.graph{
+  width: 50vw;
+}
+canvas{
+  width: 80vw;
+}
