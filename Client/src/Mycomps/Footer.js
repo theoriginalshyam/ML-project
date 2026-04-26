@@ -20,7 +20,7 @@ function Footer() {
                       alt="logo"
                       style={{ width: "60px", display: "inline" }}
                     ></img>{" "}
-                    KYVIEW CAPITAL
+                    SKYVIEW CAPITAL
                   </h4>
                 </a>
               </div>
@@ -79,13 +79,13 @@ function Footer() {
                 <i className="fas fa-home mr-3"></i> Roorkee, 247667, India
               </p>
               <p>
-                <i className="fas fa-envelope mr-3"></i> omaren0248@gmail.com
+                <i className="fas fa-envelope mr-3"></i> krishnapahariya20@gmail.com
               </p>
               <p>
-                <i className="fas fa-phone mr-3"></i> + 91 9897678379
+                <i className="fas fa-phone mr-3"></i> + 91 9876543210
               </p>
               <p>
-                <i className="fas fa-print mr-3"></i> + 91 8447691065
+                <i className="fas fa-print mr-3"></i> + 91 9012345678
               </p>
             </div>
           </div>
@@ -98,11 +98,11 @@ function Footer() {
             <div className="col-md-7 col-lg-8 text-center text-md-start">
               <div className="p-3">
                 <p style={{ textAlign: "center" }}>
-                  © 2023 Copyright: x27.2 - All Rights Reserved
+                  © 2026 Copyright: x27.2 - All Rights Reserved
                 </p>
                 <p style={{ textAlign: "center" }}>
-                  For queries contact us: Manager, AF-27, 1st floor, A-wing,
-                  Jawahar Bhawan, IIT Roorkee, Roorkee, Uttarakhand -247667,
+                  For queries contact us: Manager, A-319, 3rd floor, A-block,
+                  Vivekananda Bhawan, IIT Roorkee, Roorkee, Uttarakhand -247667,
                   India
                 </p>
               </div>
