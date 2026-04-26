@@ -205,7 +205,7 @@ function Login() {
         <div className="navbarmain">
           <a href="" style={{ "text-decoration": "none","textAlign":"center","margin":"0px" }}>
             <h1 style={{ color: "" }} aaa>
-              StockScope
+              AlgoFlux
             </h1>
           </a>
         </div>

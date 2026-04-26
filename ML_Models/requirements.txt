@@ -28,7 +28,7 @@ libclang==16.0.6
 lxml==4.9.3
 Markdown==3.5.1
 MarkupSafe==2.1.3
-ml-dtypes==0.2.0
+ml-dtypes>=0.2.0
 mpmath==1.3.0
 multitasking==0.0.11
 networkx==3.2.1
@@ -48,7 +48,7 @@ numpy>=1.24
 oauthlib==3.2.2
 opt-einsum==3.3.0
 packaging==23.2
-pandas==2.1.2
+pandas>=2.1.2
 pandas-datareader==0.10.0
 peewee==3.17.0
 protobuf==4.25.0
@@ -66,14 +66,14 @@ safetensors==0.4.0
 six==1.16.0
 soupsieve==2.5
 sympy==1.12
-tensorboard==2.14.1
-tensorboard-data-server==0.7.2
-tensorflow==2.14.0
-tensorflow-estimator==2.14.0
+tensorboard>=2.14.1
+tensorboard-data-server>=0.7.2
+tensorflow>=2.14.0
+tensorflow-estimator>=2.14.0
 # tensorflow-io-gcs-filesystem==0.34.0
 termcolor==2.3.0
 tokenizers==0.14.1
-torch==2.1.0
+torch>=2.1.0
 tqdm==4.66.1
 transformers==4.35.0
 # triton==2.1.0

@@ -11,7 +11,7 @@ function About() {
         <div className="about-section">
           <h1>About Us</h1>
           <p>
-            "Our Company StockScope comprises of five talented and
+            "Our Company AlgoFlux comprises of five talented and
             motivated individuals, each bringing a unique set of skills and
             qualities to the group. It aims to make the process of trading stocks a little
             less daunting by using the power of Artificial Intelligence. We have

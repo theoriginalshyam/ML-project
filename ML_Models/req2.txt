@@ -1,0 +1,13 @@
+Flask>=3.0.0
+python-dotenv>=1.0.1
+requests>=2.32.0
+
+numpy>=2.0.0
+pandas>=2.2.0
+
+yfinance>=0.2.40
+pandas-datareader>=0.10.0
+
+keras>=3.0.0
+torch>=2.6.0
+transformers>=4.40.0
