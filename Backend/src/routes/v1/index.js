@@ -3,6 +3,8 @@ const authRoute = require('./auth.route');
 const userRoute = require('./user.route');
 const docsRoute = require('./docs.route');
 const mlRoute = require('./ml.route');
+const ensembleRoute = require('./ensemble.route');
+const portfolioRoute = require('./portfolio.route');
 const config = require('../../config/config');
 
 const router = express.Router();
@@ -20,6 +22,14 @@ const defaultRoutes = [
     path: '/ml',
     route: mlRoute,
   },
+  {
+    path: '/ensemble',
+    route: ensembleRoute,
+  },
+  {
+    path: '/portfolio',
+    route: portfolioRoute,
+  },
 ];
 
 const devRoutes = [
@@ -27,13 +37,6 @@ const devRoutes = [
   {
     path: '/docs',
     route: docsRoute,
-  },
-];
-
-const mlRoutes = [
-  {
-    path: '/model',
-    route: mlRoute,
   },
 ];
 

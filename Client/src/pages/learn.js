@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import Navbar from "../Mycomps/Navbar";
-import Footerc from "../Mycomps/Footer";
+import TradingLayout from "../Mycomps/TradingLayout";
 import "../stylesheets/learn.css";
 
 class StockMarketLearn extends Component {
@@ -154,24 +153,6 @@ class StockMarketLearn extends Component {
       color: 'white',
       textAlign: 'center', // Align everything to the center
     };
-    const blackContainerStyle = {
-      background: 'black',
-      width: '100%',
-      padding: '10px',
-      textAlign: 'center',
-    };
-
-    const blackHeadingStyle = {
-      fontSize: '42px',
-      marginBottom:'20px' ,
-      marginTop:'0px' ,
-      
-     fontfamily: 'Montserrat', 
-      height:'20px' ,
-      color: 'white',
-      textShadow: '2px 2px 4px rgba(0, 0, 0, 0.2)',
-    };
-    
     const headerStyleBlack = {
       background: 'black',  
       
@@ -185,19 +166,6 @@ class StockMarketLearn extends Component {
       
     };
     
-    const headerStyleDarkGrey = {
-      background: 'darkgrey',
-      fontSize: '32px', // Increase the font size for headings to 32px
-      marginBottom: '20px',
-      textShadow: '2px 2px 4px rgba(0, 0, 0, 0.2)',
-    };
-
-    const lessonContainerStyle = {
-      display: 'flex',
-      justifyContent: 'space-between',
-      width: '100%',
-    };
-
     const lessonStyle = {
       padding: '12px',
       width: '30%',
@@ -235,12 +203,10 @@ class StockMarketLearn extends Component {
 
 
     return (
-    <div>
-      <Navbar />
-      <div>
-        <header style={blackContainerStyle}>
-          <h1 style={blackHeadingStyle}>LEARN</h1>
-        </header>
+      <TradingLayout
+        title="Learn"
+        subtitle="Reference material, explainers, and outside resources for users who want more context before acting on model suggestions."
+      >
         <div style={containerStyle}>
           <header style={headerStyleBlack}>
             <h1 style={bigHeadingStyle}>Stock Market Learning</h1>
@@ -264,7 +230,6 @@ class StockMarketLearn extends Component {
             <div style={horizontalBookListStyle}>
               {this.state.financeLinks.map((link, index) => (
                 <div key={index} style={horizontalBookItemStyle}>
-                  <h2 style={horizontalBookListStyle}></h2>
                   <a href={link.url} style={linkStyle} target="_blank" rel="noopener noreferrer">
                     {link.title}
                   </a>
@@ -315,9 +280,7 @@ class StockMarketLearn extends Component {
             </div>
           </div>
         </div>
-      </div>
-      <Footerc />
-    </div>
+      </TradingLayout>
     );
   }
 }

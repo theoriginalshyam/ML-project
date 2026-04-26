@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Navbar from "../Mycomps/Navbar";
-import Footerc from "../Mycomps/Footer";
+import TradingLayout from "./TradingLayout";
 import "../stylesheets/About.css"; // Import the CSS file
 
 function News() {
@@ -19,12 +18,10 @@ function News() {
   }, []);
 
   return (
-    <div>
-      <Navbar />
-    <>
-      <div className="news-title" style={{ background: '#222219', padding: '5px', textAlign: 'center', fontFamily: 'Montserrat' }}>
-        <h1 style={{ color: 'white' }}>News</h1>
-      </div>
+    <TradingLayout
+      title="News"
+      subtitle="Business headlines and market stories that can help users interpret the broader backdrop around the ensemble's trade suggestions."
+    >
       <div className="container my-5">
         <div className="row text-center">
           {news.map((val, index) => {
@@ -52,9 +49,7 @@ function News() {
           })}
         </div>
       </div>
-    </>
-    <Footerc />
-    </div>
+    </TradingLayout>
   );
 }
 
