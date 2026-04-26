@@ -23,6 +23,8 @@ const envVarsSchema = Joi.object()
     SMTP_USERNAME: Joi.string().description('username for email server'),
     SMTP_PASSWORD: Joi.string().description('password for email server'),
     EMAIL_FROM: Joi.string().description('the from field in the emails sent by the app'),
+    SERVER_SECRET: Joi.string().required().description('shared secret used for backend to ML service requests'),
+    ML_SERVICE_URL: Joi.string().uri().description('base URL for the ML service'),
   })
   .unknown();
 
@@ -61,4 +63,6 @@ module.exports = {
     },
     from: envVars.EMAIL_FROM,
   },
+  serverSecret: envVars.SERVER_SECRET,
+  mlServiceUrl: envVars.ML_SERVICE_URL || 'http://127.0.0.1:6969',
 };

@@ -1,4 +1,5 @@
 import os
+from pathlib import Path
 
 from dotenv import load_dotenv
 from flask import Flask, jsonify, request
@@ -15,7 +16,9 @@ from ensemble_inference import (
     simulate_from_request,
 )
 
-load_dotenv()
+BASE_DIR = Path(__file__).resolve().parent
+load_dotenv(BASE_DIR / ".env")
+load_dotenv(BASE_DIR.parent / "Backend" / ".env", override=False)
 
 app = Flask(__name__)
 
@@ -133,4 +136,4 @@ def ensemble_bootstrap():
 
 
 if __name__ == "__main__":
-    app.run(debug=True, port=6969)
+    app.run(debug=False, port=6969)

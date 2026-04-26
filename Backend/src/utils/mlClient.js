@@ -1,8 +1,9 @@
 const httpStatus = require('http-status');
 const request = require('request');
 const ApiError = require('./ApiError');
+const config = require('../config/config');
 
-const ML_BASE_URL = process.env.ML_SERVICE_URL || 'http://localhost:6969';
+const ML_BASE_URL = config.mlServiceUrl;
 
 const postMl = (path, body = {}) =>
   new Promise((resolve, reject) => {
@@ -12,7 +13,7 @@ const postMl = (path, body = {}) =>
         json: true,
         body,
         headers: {
-          Token: `${process.env.SERVER_SECRET}`,
+          Token: `${config.serverSecret}`,
         },
       },
       (err, response, responseBody) => {
