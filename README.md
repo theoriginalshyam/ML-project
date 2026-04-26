@@ -49,9 +49,9 @@ This architecture keeps concerns separated: UI in Client, API and auth in Backen
 
 | S.No. | Name                 | Enrollment no |
 | ----: | -------------------- | ------------- |
-| 1.    | Gitanjala Srivardhan |               |
-| 2.    | Arjun Ganesh         |               |
-| 3.    | Krishna Pahariya     |               |
+| 1.    | Gitanjala Srivardhan | 23114028      |
+| 2.    | Arjun Ganesh         | 23114009      |
+| 3.    | Krishna Pahariya     | 23113028      |
 | 4.    | Shyam Agarwal        | 23116089      |
 
 ## Requirements
