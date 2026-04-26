@@ -46,9 +46,12 @@ export default function PortfolioPage() {
       simulation.user?.portfolio_v?.length || 0,
       simulation.model?.equityCurve?.length || 0
     );
-    return Array.from({ length: maxLength }).map(
-      (_, index) => userDates[index - 1] || modelDates[index - 1] || `Day ${index}`
-    );
+    return Array.from({ length: maxLength }).map((_, index) => {
+      if (index === 0) {
+        return "Start";
+      }
+      return modelDates[index - 1] || userDates[index - 1] || `Day ${index}`;
+    });
   }, [simulation]);
 
   return (
@@ -67,6 +70,10 @@ export default function PortfolioPage() {
                 {simulation.user?.portfolio_v?.length
                   ? `$${simulation.user.portfolio_v[simulation.user.portfolio_v.length - 1].toFixed(2)}`
                   : "$0.00"}
+              </p>
+              <p className="metric-note">
+                Cash: ${Number(simulation.user?.final_balance || 0).toFixed(2)} | Holdings: $
+                {Number(simulation.user?.final_holdings_value || 0).toFixed(2)}
               </p>
               <ul className="metric-list">
                 {Object.entries(simulation.user?.metrics || {}).map(([key, value]) => (
@@ -106,6 +113,10 @@ export default function PortfolioPage() {
             <p>
               You have followed {simulation.summary?.followRate || 0}% of the stored recommendations
               across {simulation.summary?.totalTrades || 0} recorded trades.
+            </p>
+            <p className="metric-note">
+              Confirming a recommendation records the trade immediately in the simulated portfolio on that
+              recommendation date. It does not send a real broker order.
             </p>
           </section>
 

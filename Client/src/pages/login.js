@@ -200,124 +200,126 @@ function Login() {
 
   return (
     <>
-      <nav className="nav" style={{"justifyContent":"center"}}>
-            <img src={img1} width={"45px"}></img>
-        <div className="navbarmain">
-          <a href="" style={{ "text-decoration": "none","textAlign":"center","margin":"0px" }}>
-            <h1 style={{ color: "" }} aaa>
-              AlgoFlux
-            </h1>
-          </a>
-        </div>
-      </nav>
+      <div className="login-page">
+        <nav className="nav login-nav" style={{"justifyContent":"center"}}>
+              <img src={img1} width={"45px"} alt="AlgoFlux logo"></img>
+          <div className="navbarmain">
+            <a href="/" style={{ "text-decoration": "none","textAlign":"center","margin":"0px" }}>
+              <h1 style={{ color: "" }}>
+                AlgoFlux
+              </h1>
+            </a>
+          </div>
+        </nav>
 
-      <div id="container" style={{ border: "1rem", borderColor: "white" }}>
-        <div id="cover">
-          <h1 className="sign-up">Welcome Back!</h1>
-          <p className="sign-up">
-            To keep connected with us please<br></br>signin with your personal
-            details.
-          </p>
-          <br></br>
+        <div id="container" style={{ border: "1rem", borderColor: "white" }}>
+          <div id="cover">
+            <h1 className="sign-up">Welcome Back!</h1>
+            <p className="sign-up">
+              To keep connected with us please<br></br>signin with your personal
+              details.
+            </p>
+            <br></br>
 
-          <a
-            className="button sign-up"
-            href="#cover"
-            style={{
-              width: "auto",
-            }}
-            onClick={handleSignUp2Click}
-          >
-            Sign Up
-          </a>
-          <h1 className="sign-in">Hello, Friend! </h1>
-          <p className="sign-in">
-            Enter your personal details<br></br> and start a journey with us.
-          </p>
-          <br></br>
-        
-          <a
-            className="button sign-in"
-            style={{
-              width: "auto",
-            }}
-            href="#"
-            onClick={handleSignIn2Click}
-          >
-            Sign In 
-          </a>
+            <a
+              className="button sign-up"
+              href="#cover"
+              style={{
+                width: "auto",
+              }}
+              onClick={handleSignUp2Click}
+            >
+              Sign Up
+            </a>
+            <h1 className="sign-in">Hello, Friend! </h1>
+            <p className="sign-in">
+              Enter your personal details<br></br> and start a journey with us.
+            </p>
+            <br></br>
           
-        </div>
-        <div id="login">
-          <h1>Sign In</h1>
+            <a
+              className="button sign-in"
+              style={{
+                width: "auto",
+              }}
+              href="#"
+              onClick={handleSignIn2Click}
+            >
+              Sign In 
+            </a>
+            
+          </div>
+          <div id="login">
+            <h1>Sign In</h1>
 
-          <form onSubmit={handleSignInClick}>
-            <input
-              type="email"
-              name="email"
-              placeholder="Email"
-              onChange={handleEmailChange}
-            />
-            <br></br>
-            <input
-              type="password"
-              name="password"
-              placeholder="Password"
-              onChange={handlePasswordChange}
-            />
-            {password !== "" && ( // Conditionally render the checklist
-              <div style={{ display: "inline-block" }}>
-                <br></br>
-                <PasswordChecklist
-                  rules={["letter", "minLength", "number"]}
-                  minLength={8}
-                  value={password}
-                />
-                <br></br>
-              </div>
-            )}
-            <br></br>
-            <input className="submit-btn" type="submit" value="Sign In" />
-          </form>
-        </div>
-        <div id="register">
-          <h1>Create Account</h1>
-          <form onSubmit={handleSignUpClick}>
-            <input
-              type="text"
-              name="name"
-              placeholder="Name"
-              onChange={handleNameChange}
-            />
-            <br></br>
-            <input
-              type="email"
-              name="email"
-              placeholder="Email"
-              onChange={handleEmailChange}
-            />
-            <br></br>
-            <input
-              type="password"
-              name="password"
-              placeholder="Password"
-              onChange={handlePasswordChange}
-              autocomplete="off"
-            />
-            {password !== "" && ( // Conditionally render the checklist
-              <div style={{ display: "inline-block" }}>
-                <br></br>
-                <PasswordChecklist
-                  rules={["letter", "minLength", "number"]}
-                  minLength={8}
-                  value={password}
-                />
+            <form onSubmit={handleSignInClick}>
+              <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                onChange={handleEmailChange}
+              />
+              <br></br>
+              <input
+                type="password"
+                name="password"
+                placeholder="Password"
+                onChange={handlePasswordChange}
+              />
+              {password !== "" && (
+                <div style={{ display: "inline-block" }}>
+                  <br></br>
+                  <PasswordChecklist
+                    rules={["letter", "minLength", "number"]}
+                    minLength={8}
+                    value={password}
+                  />
+                  <br></br>
+                </div>
+              )}
+              <br></br>
+              <input className="submit-btn" type="submit" value="Sign In" />
+            </form>
+          </div>
+          <div id="register">
+            <h1>Create Account</h1>
+            <form onSubmit={handleSignUpClick}>
+              <input
+                type="text"
+                name="name"
+                placeholder="Name"
+                onChange={handleNameChange}
+              />
+              <br></br>
+              <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                onChange={handleEmailChange}
+              />
+              <br></br>
+              <input
+                type="password"
+                name="password"
+                placeholder="Password"
+                onChange={handlePasswordChange}
+                autoComplete="off"
+              />
+              {password !== "" && (
+                <div style={{ display: "inline-block" }}>
+                  <br></br>
+                  <PasswordChecklist
+                    rules={["letter", "minLength", "number"]}
+                    minLength={8}
+                    value={password}
+                  />
 
-              </div>
-            )}
-            <br></br>
-            <input className="submit-btn" type="submit" value="Sign Up" />
-          </form>
+                </div>
+              )}
+              <br></br>
+              <input className="submit-btn" type="submit" value="Sign Up" />
+            </form>
+          </div>
         </div>
       </div>
     </>

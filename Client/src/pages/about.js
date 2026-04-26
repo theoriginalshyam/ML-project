@@ -4,10 +4,10 @@ function About() {
   return (
     <TradingLayout
       title="About AlgoFlux"
-      subtitle="AlgoFlux now operates as an ensemble trading decision-support workflow built around your trained RL agents, not the old single-stock LSTM forecast demo."
+      subtitle="AlgoFlux is an ensemble trading decision-support platform built around trained RL agents and a user-facing portfolio review workflow."
     >
       <section className="callout-card">
-        <h3>What the platform does now</h3>
+        <h3>What the platform does</h3>
         <p>
           The model evaluates a 30-stock universe, selects an active agent based on market regime,
           and produces daily buy, sell, or hold recommendations that users can review before

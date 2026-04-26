@@ -2,6 +2,7 @@ export default function SimpleLineChart({ userSeries = [], modelSeries = [], lab
   const width = 960;
   const height = 320;
   const padding = 28;
+  const plotLength = Math.max(labels.length, userSeries.length, modelSeries.length);
   const allValues = [...userSeries, ...modelSeries].filter(
     (value) => typeof value === "number" && Number.isFinite(value)
   );
@@ -13,7 +14,6 @@ export default function SimpleLineChart({ userSeries = [], modelSeries = [], lab
   const min = Math.min(...allValues);
   const max = Math.max(...allValues);
   const span = max - min || 1;
-  const len = Math.max(userSeries.length, modelSeries.length);
 
   const buildPoints = (series) =>
     series
@@ -21,7 +21,7 @@ export default function SimpleLineChart({ userSeries = [], modelSeries = [], lab
         if (typeof value !== "number" || !Number.isFinite(value)) {
           return null;
         }
-        const x = padding + (index / Math.max(len - 1, 1)) * (width - padding * 2);
+        const x = padding + (index / Math.max(plotLength - 1, 1)) * (width - padding * 2);
         const y = height - padding - ((value - min) / span) * (height - padding * 2);
         return `${x},${y}`;
       })
@@ -56,9 +56,9 @@ export default function SimpleLineChart({ userSeries = [], modelSeries = [], lab
           points={buildPoints(modelSeries)}
         />
         {labels
-          .filter((_, index) => index % labelStep === 0 || index === labels.length - 1)
-          .map((label, idx) => {
-            const index = idx * labelStep > labels.length - 1 ? labels.length - 1 : idx * labelStep;
+          .map((label, index) => ({ label, index }))
+          .filter(({ index }) => index % labelStep === 0 || index === labels.length - 1)
+          .map(({ label, index }) => {
             const x = padding + (index / Math.max(labels.length - 1, 1)) * (width - padding * 2);
             return (
               <text key={`${label}-${x}`} x={x} y={height - 6} className="chart-axis-text" textAnchor="middle">

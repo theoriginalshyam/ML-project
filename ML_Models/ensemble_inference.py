@@ -941,7 +941,7 @@ def get_portfolio():
     }
 
 
-def simulate_user_portfolio(user_trades, arrays, initial_capital):
+def simulate_user_portfolio(user_trades, arrays, initial_capital, relevant_dates=None):
     d2i = {str(pd.Timestamp(d).date()): i for i, d in enumerate(arrays.dates)}
     balance = float(initial_capital)
     shares = np.zeros(len(arrays.tickers))
@@ -952,9 +952,16 @@ def simulate_user_portfolio(user_trades, arrays, initial_capital):
     for trade in user_trades:
         trade_map.setdefault(trade["date"], []).append(trade)
 
-    for d in sorted(d2i.keys()):
+    if relevant_dates:
+        target_dates = [str(pd.Timestamp(d).date()) for d in relevant_dates if str(pd.Timestamp(d).date()) in d2i]
+    else:
+        target_dates = sorted(d2i.keys())
+
+    last_prices = None
+    for d in target_dates:
         idx = d2i[d]
         prices = arrays.prices[idx]
+        last_prices = prices
         if d in trade_map:
             for trade in trade_map[d]:
                 ti = t2i.get(trade["ticker"])
@@ -972,18 +979,22 @@ def simulate_user_portfolio(user_trades, arrays, initial_capital):
         val = balance + float((shares * prices).sum())
         pv.append(val)
         dates.append(d)
+    holdings_value = float((shares * last_prices).sum()) if last_prices is not None else 0.0
     return {
         "portfolio_v": pv,
         "dates": dates,
         "metrics": compute_metrics(pv),
         "final_shares": {arrays.tickers[i]: int(shares[i]) for i in range(len(arrays.tickers))},
         "final_balance": balance,
+        "final_holdings_value": holdings_value,
+        "final_portfolio_value": pv[-1],
     }
 
 
 def simulate_from_request(trades, initial_capital):
     runtime = get_runtime()
-    return simulate_user_portfolio(trades, runtime["arrays"], initial_capital)
+    state = read_state()
+    return simulate_user_portfolio(trades, runtime["arrays"], initial_capital, relevant_dates=state.get("trade_dates"))
 
 
 def bootstrap_state(force=False):

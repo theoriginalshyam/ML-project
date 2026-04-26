@@ -6,11 +6,92 @@ AlgoFlux is a full-stack ensemble trading review platform. It combines:
 - a Node/Express backend for auth, user state, and API orchestration
 - a Flask ML service that serves inference from pre-trained RL agents
 
-The current product is inference-only. It does not train models inside the website. Instead, it loads trained ensemble artifacts, produces daily trading recommendations, and lets each user compare their own decisions against the model's untouched run.
+The platform is inference-only. It does not train models inside the website. Instead, it loads trained ensemble artifacts, produces daily trading recommendations, and lets each user compare their own decisions against the model's untouched run.
+
+## Local Setup
+
+### Requirements
+
+- Node.js
+- Python
+- MongoDB
+
+### Backend Setup
+
+In `Backend/.env`, make sure these values exist:
+
+```env
+NODE_ENV=development
+PORT=5000
+MONGODB_URL=...
+JWT_SECRET=...
+JWT_ACCESS_EXPIRATION_MINUTES=30
+JWT_REFRESH_EXPIRATION_DAYS=30
+JWT_RESET_PASSWORD_EXPIRATION_MINUTES=10
+JWT_VERIFY_EMAIL_EXPIRATION_MINUTES=10
+SERVER_SECRET=your-secret-key
+ML_SERVICE_URL=http://127.0.0.1:6969
+```
+
+Install dependencies:
+
+```powershell
+cd Backend
+npm install
+```
+
+### Client Setup
+
+Install dependencies:
+
+```powershell
+cd Client
+npm install
+```
+
+### ML Service Setup
+
+Create a Python environment inside `ML_Models`, install the current `requirements.txt`, and place the trained artifacts under `ML_Models/output/`.
+
+Then bootstrap the runtime state if needed:
+
+```powershell
+cd ML_Models
+.\venv\Scripts\python.exe bootstrap_state.py
+```
+
+## How To Run Locally
+
+Start the ML service first:
+
+```powershell
+cd ML_Models
+.\venv\Scripts\python.exe app.py
+```
+
+Start the backend next:
+
+```powershell
+cd Backend
+npm run dev
+```
+
+Start the client last:
+
+```powershell
+cd Client
+npm start
+```
+
+Default local URLs:
+
+- client: `http://localhost:3000`
+- backend: `http://localhost:5000`
+- ML service: `http://127.0.0.1:6969`
 
 ## What The Website Does Now
 
-After login, the website behaves like a trading decision-support workspace rather than a stock-price forecast demo.
+After login, the website behaves like a trading decision-support workspace.
 
 ### Dashboard
 
@@ -135,7 +216,7 @@ It exposes inference-only ensemble endpoints:
 
 The service expects a shared `Token` header from the backend using `SERVER_SECRET`.
 
-The legacy `/model` route is intentionally disabled for the new workflow.
+The `/model` route is disabled in this installation.
 
 ## Required ML Artifacts
 
@@ -175,87 +256,6 @@ It stores things like:
 `bootstrap_state.py` initializes that file from your trained artifacts and downloaded market data.
 
 After bootstrap, `run-day` is the path that advances the saved ML state.
-
-## Local Setup
-
-### Requirements
-
-- Node.js
-- Python
-- MongoDB
-
-### Backend Setup
-
-In `Backend/.env`, make sure these values exist:
-
-```env
-NODE_ENV=development
-PORT=5000
-MONGODB_URL=...
-JWT_SECRET=...
-JWT_ACCESS_EXPIRATION_MINUTES=30
-JWT_REFRESH_EXPIRATION_DAYS=30
-JWT_RESET_PASSWORD_EXPIRATION_MINUTES=10
-JWT_VERIFY_EMAIL_EXPIRATION_MINUTES=10
-SERVER_SECRET=your-secret-key
-ML_SERVICE_URL=http://127.0.0.1:6969
-```
-
-Install dependencies:
-
-```powershell
-cd Backend
-npm install
-```
-
-### Client Setup
-
-Install dependencies:
-
-```powershell
-cd Client
-npm install
-```
-
-### ML Service Setup
-
-Create a Python environment inside `ML_Models`, install the current `requirements.txt`, and place the trained artifacts under `ML_Models/output/`.
-
-Then bootstrap the runtime state if needed:
-
-```powershell
-cd ML_Models
-.\venv\Scripts\python.exe bootstrap_state.py
-```
-
-## How To Run Locally
-
-Start the ML service first:
-
-```powershell
-cd ML_Models
-.\venv\Scripts\python.exe app.py
-```
-
-Start the backend next:
-
-```powershell
-cd Backend
-npm run dev
-```
-
-Start the client last:
-
-```powershell
-cd Client
-npm start
-```
-
-Default local URLs:
-
-- client: `http://localhost:3000`
-- backend: `http://localhost:5000`
-- ML service: `http://127.0.0.1:6969`
 
 ## Current Product Flow
 

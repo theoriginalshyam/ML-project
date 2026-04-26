@@ -1,5 +1,5 @@
 # Inference-only dependencies for the ensemble trading service.
-# This file intentionally excludes the old LSTM / TensorFlow training stack.
+# This file is scoped to the deployed ensemble inference service.
 
 Flask>=3.0,<4.0
 python-dotenv>=1.0,<2.0
